@@ -31,11 +31,11 @@ kind: Service
 metadata:
   name: userservice
 spec:
-  type: NodePort  # Change to LoadBalancer if needed
+  type: NodePort  
   selector:
     app: userservice
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 30001  # Omit this line if using LoadBalancer type
+      nodePort: 30001  #
