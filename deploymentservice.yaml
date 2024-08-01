@@ -24,29 +24,18 @@ spec:
               value: "mongodb://159.89.171.87:25755/userservice"
             - name: OTHER_ENV_VARIABLE
               value: "value"
-            
-            
-------------
 
-
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: userservice
 spec:
-  selector:
-    app: userservice
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
-  type: LoadBalancer
-spec:
-  type: NodePort
+  type: NodePort  # Change to LoadBalancer if needed
   selector:
     app: userservice
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 30001
+      nodePort: 30001  # Omit this line if using LoadBalancer type
