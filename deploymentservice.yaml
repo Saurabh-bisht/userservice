@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: userservice
-          image: hcorptech/userservice
+          image: hcorptech/userservice:latest
           ports:
             - containerPort: 8080
           env:
